@@ -64,6 +64,7 @@ window.SITE = {
       type: "review",
       openAccess: true,
       doi: "10.3390/jimaging12020088",
+      repo: "https://hdl.handle.net/10481/111232",
       tags: ["Deep learning", "Computer vision"]
     },
     {
@@ -73,6 +74,7 @@ window.SITE = {
       journal: "The Plant Journal",
       details: "125(3): e70685",
       type: "review",
+      openAccess: true,
       doi: "10.1111/tpj.70685",
       tags: ["NUPTs", "Genome evolution"]
     },
@@ -83,7 +85,9 @@ window.SITE = {
       journal: "The Canadian Entomologist",
       details: "156: e40",
       type: "article",
+      openAccess: true,
       doi: "10.4039/tce.2024.36",
+      repo: "https://hdl.handle.net/10481/97902",
       code: "https://github.com/AaronGS1999/Drosophila_Tensorflow",
       tags: ["TensorFlow", "Object detection"]
     },
@@ -105,7 +109,9 @@ window.SITE = {
       journal: "The American Biology Teacher",
       details: "84(7): 396–398",
       type: "teaching",
+      openAccess: true,
       doi: "10.1525/abt.2022.84.7.396",
+      repo: "https://hdl.handle.net/10481/77174",
       tags: ["Education"]
     },
     {
@@ -212,6 +218,7 @@ window.SITE = {
         en: "Spreadsheet for teaching Mendelian inheritance, gene interactions and linkage."
       },
       stack: ["Excel", { es: "Docencia", en: "Teaching" }],
+      demo: "https://calculadoragenes.azurewebsites.net",
       paper: "https://doi.org/10.7203/DCES.42.21008"
     },
     {
