@@ -116,7 +116,8 @@ window.SITE = {
       details: "42: 99–118",
       type: "teaching",
       openAccess: true,
-      url: "https://turia.uv.es/index.php/dces/article/view/21008",
+      doi: "10.7203/DCES.42.21008",
+      repo: "https://hdl.handle.net/10481/76489",
       tags: ["Education"]
     }
   ],
@@ -211,7 +212,7 @@ window.SITE = {
         en: "Spreadsheet for teaching Mendelian inheritance, gene interactions and linkage."
       },
       stack: ["Excel", { es: "Docencia", en: "Teaching" }],
-      paper: "https://turia.uv.es/index.php/dces/article/view/21008"
+      paper: "https://doi.org/10.7203/DCES.42.21008"
     },
     {
       name: "Excel Mapper",

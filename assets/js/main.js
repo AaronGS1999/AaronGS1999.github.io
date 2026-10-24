@@ -27,7 +27,7 @@
       "cat.research": "Investigación", "cat.education": "Formación", "cat.publication": "Publicación",
       "cat.conference": "Congreso", "cat.course": "Curso", "cat.other": "Otros",  "contact.title": "Contacto", 
       "btn.email": "Correo", "btn.cv": "Descargar CV", "btn.pubs": "Publicaciones",
-      "l.doi": "DOI", "l.read": "Leer", "l.code": "Código", "l.demo": "Abrir app", "l.repo": "GitHub", "l.paper": "Artículo",
+      "l.doi": "DOI", "l.read": "Leer", "l.code": "Código", "l.demo": "Abrir app", "l.repo": "GitHub", "l.paper": "Artículo", "l.repo2": "Repositorio",
       "oa": "Acceso abierto",
       "theme": "Cambiar tema", "menu": "Menú",
       "months": ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"], 
@@ -47,7 +47,7 @@
       "cat.research": "Research", "cat.education": "Education", "cat.publication": "Publication",
       "cat.conference": "Conference", "cat.course": "Course", "cat.other": "Other",  "contact.title": "Contact", 
       "btn.email": "Email", "btn.cv": "Download CV", "btn.pubs": "Publications",
-      "l.doi": "DOI", "l.read": "Read", "l.code": "Code", "l.demo": "Open app", "l.repo": "GitHub", "l.paper": "Paper",
+      "l.doi": "DOI", "l.read": "Read", "l.code": "Code", "l.demo": "Open app", "l.repo": "GitHub", "l.paper": "Paper", "l.repo2": "Repository",
       "oa": "Open access",
       "theme": "Toggle theme", "menu": "Menu",
       "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], 
@@ -185,6 +185,7 @@
     if (p.doi) links.push(ext("https://doi.org/" + p.doi, ui("l.doi")));
     if (p.url) links.push(ext(p.url, ui("l.read")));
     if (p.pdf) links.push(ext(p.pdf, "PDF"));
+    if (p.repo) links.push(ext(p.repo, ui("l.repo2")));
     if (p.code) links.push(ext(p.code, ui("l.code")));
     var badges = '<span class="badge badge--muted">' + esc(ui("one." + p.type)) + "</span>";
     if (p.openAccess) badges += '<span class="badge badge--oa">' + esc(ui("oa")) + "</span>";
