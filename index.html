@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="es" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Aaron Gálvez Salido · Genómica evolutiva de plantas</title>
+  <meta name="description" content="Aaron Gálvez Salido, investigador predoctoral en genómica evolutiva de plantas en la Universidad de Almería. Publicaciones, congresos, software y cuadernos de Colab.">
+  <meta name="author" content="Aaron Gálvez Salido">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Aaron Gálvez Salido">
+  <meta property="og:description" content="Investigador predoctoral en genómica evolutiva de plantas · Universidad de Almería">
+  <meta property="og:image" content="assets/img/foto.jpg">
+
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script>
+    // Aplica tema e idioma antes de pintar para evitar parpadeos
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+        var l = localStorage.getItem("lang") || ((navigator.language || "es").toLowerCase().indexOf("es") === 0 ? "es" : "en");
+        document.documentElement.lang = l;
+      } catch (e) {}
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Aaron Gálvez Salido",
+    "jobTitle": "Predoctoral researcher",
+    "affiliation": { "@type": "Organization", "name": "Universidad de Almería" },
+    "email": "mailto:ags408@ual.es",
+    "sameAs": [
+      "https://orcid.org/0000-0002-1440-8862",
+      "https://github.com/AaronGS1999"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Saltar al contenido</a>
+
+  <!-- ─────────────── Navegación ─────────────── -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#top" aria-label="Inicio">
+        <img class="nav__avatar" src="assets/img/foto.jpg" alt="" width="28" height="28">
+        <span class="nav__name">Aaron Gálvez</span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Secciones">
+        <a href="#about" data-i18n="nav.about">Sobre mí</a>
+        <a href="#publications" data-i18n="nav.publications">Publicaciones</a>
+        <a href="#software" data-i18n="nav.software">Software</a>
+        <a href="#notebooks" data-i18n="nav.notebooks">Cuadernos</a>
+        <a href="#conferences" data-i18n="nav.conferences">Congresos</a>
+        <a href="#timeline" data-i18n="nav.timeline">Trayectoria</a>
+        <a href="#contact" data-i18n="nav.contact">Contacto</a>
+      </nav>
+      <div class="nav__tools">
+        <button class="pill-toggle" id="langToggle" type="button" aria-label="Cambiar idioma / Change language">
+          <span data-lang="es">ES</span><span data-lang="en">EN</span>
+        </button>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Cambiar tema">
+          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8z"/></svg>
+        </button>
+        <button class="icon-btn nav__burger" id="menuToggle" type="button" aria-label="Menú" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ─────────────── Hero ─────────────── -->
+    <section class="hero" id="top">
+      <div class="wrap hero__inner">
+        <div class="avatar reveal" id="avatar"></div>
+        <p class="eyebrow reveal" id="heroAffiliation"></p>
+        <h1 class="hero__title reveal" id="heroName"></h1>
+        <p class="hero__role reveal" id="heroRole"></p>
+        <div class="hero__actions reveal" id="heroActions"></div>
+        <ul class="hero__links reveal" id="heroLinks"></ul>
+      </div>
+    </section>
+
+    <!-- ─────────────── Sobre mí ─────────────── -->
+    <section class="section section--alt" id="about">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <h2 class="section__title" data-i18n="about.title">Sobre mí</h2>
+        </header>
+        <div class="about reveal">
+          <p class="about__bio lead" id="bio"></p>
+          <div class="about__side">
+            <h3 class="mini-title" data-i18n="about.interests">Intereses</h3>
+            <ul class="chips" id="interests"></ul>
+            <h3 class="mini-title" data-i18n="about.education">Formación</h3>
+            <ol class="edu" id="education"></ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────── Publicaciones ─────────────── -->
+    <section class="section" id="publications">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <h2 class="section__title" data-i18n="pubs.title">Publicaciones</h2>
+        </header>
+        <div class="toolbar reveal">
+          <div class="segmented" id="pubFilter" role="tablist"></div>
+          <label class="search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg>
+            <input id="pubSearch" type="search" data-i18n-placeholder="pubs.search" placeholder="Buscar">
+          </label>
+        </div>
+        <div class="pubs" id="pubList"></div>
+      </div>
+    </section>
+
+    <!-- ─────────────── Software ─────────────── -->
+    <section class="section section--alt" id="software">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <h2 class="section__title" data-i18n="soft.title">Aplicaciones y software</h2>
+        </header>
+        <div class="cards" id="softList"></div>
+      </div>
+    </section>
+
+    <!-- ─────────────── Cuadernos ─────────────── -->
+    <section class="section" id="notebooks">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <h2 class="section__title" data-i18n="nb.title">Cuadernos de Google Colab</h2>
+        </header>
+        <div class="nb-grid" id="nbList"></div>
+      </div>
+    </section>
+
+    <!-- ─────────────── Congresos ─────────────── -->
+    <section class="section section--alt" id="conferences">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <h2 class="section__title" data-i18n="conf.title">Congresos</h2>
+        </header>
+        <div class="confs" id="confList"></div>
+      </div>
+    </section>
+
+    <!-- ─────────────── Proyectos + Docencia ─────────────── -->
+    <section class="section" id="projects">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <h2 class="section__title" data-i18n="proj.title">Proyectos</h2>
+        </header>
+        <div class="projects" id="projList"></div>
+
+        <div class="split">
+          <div class="reveal">
+            <h3 class="sub-title" data-i18n="teach.title">Docencia</h3>
+            <ul class="plain" id="teachList"></ul>
+          </div>
+          <div class="reveal">
+            <h3 class="sub-title" data-i18n="out.title">Divulgación</h3>
+            <ul class="plain" id="outList"></ul>
+          </div>
+          <div class="reveal">
+            <h3 class="sub-title" data-i18n="serv.title">Revisión</h3>
+            <ul class="plain" id="servList"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────── Trayectoria ─────────────── -->
+    <section class="section section--alt" id="timeline">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <h2 class="section__title" data-i18n="tl.title">Trayectoria</h2>
+        </header>
+        <div class="toolbar reveal">
+          <div class="segmented segmented--wrap" id="tlFilter" role="tablist"></div>
+        </div>
+        <ol class="tl" id="tlList"></ol>
+        <div class="center">
+          <button class="btn btn--ghost" id="tlMore" type="button"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────── Contacto ─────────────── -->
+    <section class="section contact" id="contact">
+      <div class="wrap center reveal">
+        <h2 class="contact__title" data-i18n="contact.title">Contacto</h2>
+        <div class="hero__actions" id="contactActions"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span id="footerCopy"></span>
+      <ul class="footer__links" id="footerLinks"></ul>
+    </div>
+  </footer>
+
+  <script src="data/content.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
