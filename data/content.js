@@ -71,9 +71,9 @@ window.SITE = {
       title: "Nuclear DNA of plastid origin (NUPTs), neglected driver of genome variation and evolutionary innovation",
       authors: "Carretero-Paulet L, Marczuk-Rojas JP, Gálvez-Salido A",
       journal: "The Plant Journal",
-      details: "125(3)",
+      details: "125(3): e70685",
       type: "review",
-      url: "https://scholar.google.com/scholar?q=%22Nuclear+DNA+of+plastid+origin+(NUPTs)%2C+neglected+driver+of+genome+variation%22",
+      doi: "10.1111/tpj.70685",
       tags: ["NUPTs", "Genome evolution"]
     },
     {

@@ -238,7 +238,7 @@
         '<p class="conf__event">' + esc(tr(c.event)) + "</p>" +
         '<p class="conf__place">' + esc(tr(c.place)) + "</p>" +
         (c.authors ? '<p class="conf__authors">' + hlMe(c.authors) + "</p>" : "") +
-        (c.url ? '<p style="margin-top:10px">' + ext(c.url, ui("l.read")) + "</p>" : "") +
+        (c.doi || c.url ? '<p class="pub__meta">' + (c.doi ? ext("https://doi.org/" + c.doi, ui("l.doi")) : "") + (c.url ? ext(c.url, ui("l.read")) : "") + "</p>" : "") +
         "</div></article>";
     }).join("");
   }
