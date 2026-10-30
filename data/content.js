@@ -80,7 +80,7 @@ window.SITE = {
     },
     {
       year: 2024,
-      title: "Automatic counting and identification of two Drosophila melanogaster (Diptera: Drosophilidae) morphs with image-recognition artificial intelligence",
+      title: "Automatic counting and identification of two *Drosophila melanogaster* (Diptera: Drosophilidae) morphs with image-recognition artificial intelligence",
       authors: "Gálvez-Salido A, de la Herrán R, Robles F, Ruiz Rejón C, Navajas-Pérez R",
       journal: "The Canadian Entomologist",
       details: "156: e40",
@@ -93,7 +93,7 @@ window.SITE = {
     },
     {
       year: 2024,
-      title: "The genomic study of repetitive elements in Solea senegalensis reveals multiple impacts of transposable elements in the evolution and architecture of Pleuronectiformes chromosomes",
+      title: "The genomic study of repetitive elements in *Solea senegalensis* reveals multiple impacts of transposable elements in the evolution and architecture of Pleuronectiformes chromosomes",
       authors: "Cross I, Rodríguez ME, Portela-Bens S, Merlo MA, Gálvez-Salido A, Navajas-Pérez R, Rebordinos L",
       journal: "Frontiers in Marine Science",
       details: "11: 1359531",
@@ -132,14 +132,14 @@ window.SITE = {
   conferences: [
     {
       date: "2026-07-01",
-      title: "Uncovering plastid-mitochondria DNA exchange and genome rearrangements in two economically important Moringa species (Moringaceae)",
+      title: "Uncovering plastid-mitochondria DNA exchange and genome rearrangements in two economically important *Moringa* species (Moringaceae)",
       authors: "Gálvez-Salido A, Contreras-Saavedra P, Martínez-Padilla C, Ríos-Bravo A, Kassa MT, Olson ME, Odee DW, Carretero-Paulet L",
       event: { es: "XVIII Meeting of Plant Molecular Biology · Póster S6.P16", en: "XVIII Meeting of Plant Molecular Biology · Poster S6.P16" },
       place: { es: "Bilbao, España", en: "Bilbao, Spain" }
     },
     {
       date: "2025-11-13",
-      title: "Characterisation of Moringa stenopetala organellar genomes",
+      title: "Characterisation of *Moringa stenopetala* organellar genomes",
       authors: "Gálvez-Salido A, Contreras Saavedra P, Martínez Padilla C, Ríos Bravo A, Regalado González JJ, Carretero-Paulet L",
       event: "XIV Simposio de Investigación en Ciencias Experimentales",
       place: "Almería, España"
@@ -153,14 +153,14 @@ window.SITE = {
     },
     {
       date: "2023-07-18",
-      title: "Caracterización de las regiones centroméricas del lenguado senegalés (Solea senegalensis, Kaup 1858)",
+      title: "Caracterización de las regiones centroméricas del lenguado senegalés (*Solea senegalensis*, Kaup 1858)",
       authors: "Gálvez-Salido A, Jiménez C, Manzanares García I, Zapata M, de la Herrán R, Robles F, Ruiz Rejón C, Navajas-Pérez R",
       event: "Congreso Estatal de Estudiantes de Biociencias (CEEBI)",
       place: "Granada, España"
     },
     {
       date: "2023-05-21",
-      title: "Divergence and genomic evolution of repetitive elements in the sole Solea senegalensis",
+      title: "Divergence and genomic evolution of repetitive elements in the sole *Solea senegalensis*",
       authors: "Cross I, Portela-Bens S, Merlo MA, Navajas-Pérez R, Rodríguez ME, Gálvez-Salido A, Arias-Pérez A, Centeno-Cuadros A, Robles F, Ruiz-Rejón C, Rebordinos L",
       event: "XLIII Congreso de la Sociedad Española de Genética (SEG)",
       place: "Valencia, España"
@@ -176,8 +176,8 @@ window.SITE = {
       icon: "map", color: "#34c759",
       year: 2025,
       description: {
-        es: "Mapa de los algarrobos (Ceratonia siliqua) muestreados por el grupo PlantEVOLGEN para el proyecto de secuenciación, con búsqueda, filtros por origen y una ficha por árbol.",
-        en: "Map of the carob trees (Ceratonia siliqua) sampled by the PlantEVOLGEN group for the sequencing project, with search, filters by origin and a data sheet per tree."
+        es: "Mapa de los algarrobos (*Ceratonia siliqua*) muestreados por el grupo PlantEVOLGEN para el proyecto de secuenciación, con búsqueda, filtros por origen y una ficha por árbol.",
+        en: "Map of the carob trees (*Ceratonia siliqua*) sampled by the PlantEVOLGEN group for the sequencing project, with search, filters by origin and a data sheet per tree."
       },
       stack: ["JavaScript", "Leaflet", "GitHub Pages"],
       demo: "https://aarongs1999.github.io/AlgarroMapv2/",
@@ -334,21 +334,21 @@ window.SITE = {
   /* ───────────────────────── TFG codirigidos ───────────────────────── */
   theses: [
     {
-      title: "Secuenciación, ensamblaje y anotación de los genomas mitocondriales de Moringa oleifera y M. stenopetala",
+      title: "Secuenciación, ensamblaje y anotación de los genomas mitocondriales de *Moringa oleifera* y *M. stenopetala*",
       student: "Pablo Contreras Saavedra",
       degree: { es: "Grado en Biotecnología · Universidad de Almería", en: "BSc Biotechnology · University of Almería" },
       year: "2026",
       grade: { es: "Matrícula de Honor", en: "Highest distinction" }
     },
     {
-      title: "Ensamblaje de novo, anotación y análisis comparativo de los plastomas de Moringa stenopetala y M. oleifera",
+      title: "Ensamblaje *de novo*, anotación y análisis comparativo de los plastomas de *Moringa stenopetala* y *M. oleifera*",
       student: "Carmen Martínez Padilla",
       degree: { es: "Grado en Biotecnología · Universidad de Almería", en: "BSc Biotechnology · University of Almería" },
       year: "2026",
       grade: { es: "Sobresaliente", en: "Outstanding" }
     },
     {
-      title: "Estudio comparativo de la fracción de ADN nuclear de origen organelar entre las especies Moringa stenopetala y M. oleifera",
+      title: "Estudio comparativo de la fracción de ADN nuclear de origen organelar entre las especies *Moringa stenopetala* y *M. oleifera*",
       student: "Andrea Ríos Bravo",
       degree: { es: "Grado en Biotecnología · Universidad de Almería", en: "BSc Biotechnology · University of Almería" },
       year: "2026",
@@ -359,24 +359,24 @@ window.SITE = {
   /* ───────────────────────── Trayectoria (línea del tiempo) ─────────────────────────
      date: "AAAA-MM"   ·   cat: "research" | "education" | "publication" | "conference" | "course" | "other" */
   timeline: [
-    { date: "2026-07", cat: "conference",  text: "Uncovering plastid-mitochondria DNA exchange and genome rearrangements in two economically important Moringa species (Moringaceae) · XVIII Meeting of Plant Molecular Biology (Bilbao)" },
+    { date: "2026-07", cat: "conference",  text: "Uncovering plastid-mitochondria DNA exchange and genome rearrangements in two economically important *Moringa* species (Moringaceae) · XVIII Meeting of Plant Molecular Biology (Bilbao)" },
     { date: "2026-06", cat: "other",         text: { es: "Codirección de tres Trabajos Fin de Grado · Grado en Biotecnología (Universidad de Almería)", en: "Co-supervision of three Bachelor's theses · BSc Biotechnology (University of Almería)" } },
     { date: "2026-02", cat: "other",       text: { es: "Genómica y Proteómica · Grado en Biotecnología (Universidad de Almería)", en: "Genómica y Proteómica · BSc Biotechnology (University of Almería)" } },
     { date: "2026-02", cat: "publication", text: "Analysis of Biological Images and Quantitative Monitoring Using Deep Learning and Computer Vision · Journal of Imaging" },
     { date: "2026-02", cat: "publication", text: "Nuclear DNA of plastid origin (NUPTs), neglected driver of genome variation and evolutionary innovation · The Plant Journal" },
-    { date: "2025-11", cat: "conference",  text: "Characterisation of Moringa stenopetala organellar genomes · XIV Simposio de Investigación en Ciencias Experimentales (Almería)" },
+    { date: "2025-11", cat: "conference",  text: "Characterisation of *Moringa stenopetala* organellar genomes · XIV Simposio de Investigación en Ciencias Experimentales (Almería)" },
     { date: "2025-09", cat: "other",       text: { es: "Revisor para BMC Genomics", en: "Reviewer for BMC Genomics" } },
     { date: "2025-06", cat: "conference",  text: "An experimental comparison of Bayesian Network classifiers for duplicability detection · 13th Workshop on Uncertainty Processing, WUPES '25 (Třešť)" },
     { date: "2025-04", cat: "research",    text: { es: "Contrato predoctoral · Universidad de Almería, grupo BIO-359 PlantEVOLGEN", en: "PhD contract · University of Almería, BIO-359 PlantEVOLGEN group" } },
     { date: "2025-02", cat: "education",   text: { es: "Máster Universitario en Bioinformática y Bioestadística · Universitat Oberta de Catalunya", en: "MSc in Bioinformatics and Biostatistics · Universitat Oberta de Catalunya" } },
-    { date: "2024-12", cat: "publication", text: "Automatic counting and identification of two Drosophila melanogaster (Diptera: Drosophilidae) morphs with image-recognition artificial intelligence · The Canadian Entomologist" },
+    { date: "2024-12", cat: "publication", text: "Automatic counting and identification of two *Drosophila melanogaster* (Diptera: Drosophilidae) morphs with image-recognition artificial intelligence · The Canadian Entomologist" },
     { date: "2024-10", cat: "research",    text: { es: "Prácticas curriculares · Cognición y Plasticidad Cerebral, IDIBELL", en: "Internship · Cognition and Brain Plasticity, IDIBELL" } },
-    { date: "2024-02", cat: "publication", text: "The genomic study of repetitive elements in Solea senegalensis reveals multiple impacts of transposable elements in the evolution and architecture of Pleuronectiformes chromosomes · Frontiers in Marine Science" },
+    { date: "2024-02", cat: "publication", text: "The genomic study of repetitive elements in *Solea senegalensis* reveals multiple impacts of transposable elements in the evolution and architecture of Pleuronectiformes chromosomes · Frontiers in Marine Science" },
     { date: "2023-11", cat: "research",    text: { es: "Investigador licenciado · Universidad de Murcia", en: "Research graduate · University of Murcia" } },
     { date: "2023-09", cat: "education",   text: { es: "Inicio del Máster Universitario en Bioinformática y Bioestadística · Universitat Oberta de Catalunya", en: "Started MSc in Bioinformatics and Biostatistics · Universitat Oberta de Catalunya" } },
-    { date: "2023-07", cat: "conference",  text: "Caracterización de las regiones centroméricas del lenguado senegalés (Solea senegalensis, Kaup 1858) · Congreso Estatal de Estudiantes de Biociencias (Granada)" },
+    { date: "2023-07", cat: "conference",  text: "Caracterización de las regiones centroméricas del lenguado senegalés (*Solea senegalensis*, Kaup 1858) · Congreso Estatal de Estudiantes de Biociencias (Granada)" },
     { date: "2023-07", cat: "education",   text: { es: "Máster Universitario en Genética y Evolución · Universidad de Granada", en: "MSc in Genetics and Evolution · University of Granada" } },
-    { date: "2023-05", cat: "conference",  text: "Divergence and genomic evolution of repetitive elements in the sole Solea senegalensis · XLIII Congreso de la Sociedad Española de Genética (Valencia)" },
+    { date: "2023-05", cat: "conference",  text: "Divergence and genomic evolution of repetitive elements in the sole *Solea senegalensis* · XLIII Congreso de la Sociedad Española de Genética (Valencia)" },
     { date: "2022-11", cat: "other",       text: { es: "Bicentenario del Nacimiento de Gregor Mendel (1822-2022) · Semana de la Ciencia, Universidad de Granada", en: "Bicentenario del Nacimiento de Gregor Mendel (1822-2022) · Science Week, University of Granada" } },
     { date: "2022-09", cat: "publication", text: "Using Excel Mapper to Design Chromosome Idiograms · The American Biology Teacher" },
     { date: "2022-09", cat: "education",   text: { es: "Inicio del Máster Universitario en Genética y Evolución · Universidad de Granada", en: "Started MSc in Genetics and Evolution · University of Granada" } },

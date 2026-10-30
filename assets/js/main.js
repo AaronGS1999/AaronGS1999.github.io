@@ -85,6 +85,10 @@
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
   };
+  // *texto* → cursiva (nombres científicos)
+  var rich = function (s) {
+    return esc(s).replace(/\*([^*]+)\*/g, function (_, t) { return "<em>" + t.replace(/\. /g, ".&nbsp;") + "</em>"; });
+  };
   var tr = function (v) { return v && typeof v === "object" && !Array.isArray(v) ? (v[lang] || v.es || v.en || "") : (v || ""); };
   var ui = function (k) { return (UI[lang] && UI[lang][k]) || UI.es[k] || k; };
   var ext = function (url, label, cls) {
@@ -146,7 +150,7 @@
 
   /* ─────────── Sobre mí ─────────── */
   function renderAbout() {
-    $("#bio").textContent = tr(S.profile.bio);
+    $("#bio").innerHTML = rich(tr(S.profile.bio));
     $("#interests").innerHTML = S.profile.interests.map(function (i) { return '<li class="chip">' + esc(tr(i)) + "</li>"; }).join("");
     $("#education").innerHTML = (S.education || []).map(function (e) {
       return "<li><strong>" + esc(tr(e.degree)) + "</strong><span>" + esc(tr(e.institution)) + " · " + esc(e.period) + "</span></li>";
@@ -169,7 +173,7 @@
     var list = S.publications.slice().sort(function (a, b) { return b.year - a.year; }).filter(function (p) {
       if (pubState.type !== "all" && p.type !== pubState.type) return false;
       if (!q) return true;
-      return [p.title, p.authors, p.journal, (p.tags || []).join(" ")].join(" ").toLowerCase().indexOf(q) > -1;
+      return [p.title, p.authors, p.journal, (p.tags || []).join(" ")].join(" ").replace(/\*/g, "").toLowerCase().indexOf(q) > -1;
     });
     if (!list.length) { $("#pubList").innerHTML = '<p class="empty">' + esc(ui("pubs.empty")) + "</p>"; return; }
     var byYear = {};
@@ -190,7 +194,7 @@
     var badges = '<span class="badge badge--muted">' + esc(ui("one." + p.type)) + "</span>";
     if (p.openAccess) badges += '<span class="badge badge--oa">' + esc(ui("oa")) + "</span>";
     return '<article class="pub">' +
-      '<h3 class="pub__title">' + esc(p.title) + "</h3>" +
+      '<h3 class="pub__title">' + rich(p.title) + "</h3>" +
       '<p class="pub__authors">' + hlMe(p.authors) + "</p>" +
       '<p class="pub__venue"><em>' + esc(p.journal) + "</em>" + (p.details ? ", " + esc(p.details) : "") + "</p>" +
       '<div class="pub__meta">' + badges + links.join("") + "</div>" +
@@ -208,7 +212,7 @@
       return '<article class="card reveal' + (i < 2 ? " card--wide" : "") + '">' +
         '<div class="card__icon" style="background:' + esc(s.color || "var(--accent)") + '">' + (ICON[s.icon] || ICON.code) + "</div>" +
         '<div class="card__head"><h3 class="card__title">' + esc(tr(s.name)) + "</h3>" + (s.year ? '<span class="card__year">' + s.year + "</span>" : "") + "</div>" +
-        '<p class="card__desc">' + esc(tr(s.description)) + "</p>" +
+        '<p class="card__desc">' + rich(tr(s.description)) + "</p>" +
         '<div class="card__stack">' + (s.stack || []).map(function (t) { return "<span>" + esc(tr(t)) + "</span>"; }).join("") + "</div>" +
         (links.length ? '<div class="card__links">' + links.join("") + "</div>" : "") +
         "</article>";
@@ -220,8 +224,8 @@
     $("#nbList").innerHTML = S.notebooks.map(function (n) {
       return '<a class="nb reveal" href="' + esc(n.url) + '" target="_blank" rel="noopener">' +
         '<div class="nb__top"><span class="nb__logo">' + ICON.notebook + '</span><span class="nb__topic">' + esc(tr(n.topic)) + "</span></div>" +
-        '<h3 class="nb__title">' + esc(tr(n.title)) + "</h3>" +
-        (tr(n.description) ? '<p class="nb__desc">' + esc(tr(n.description)) + "</p>" : "") +
+        '<h3 class="nb__title">' + rich(tr(n.title)) + "</h3>" +
+        (tr(n.description) ? '<p class="nb__desc">' + rich(tr(n.description)) + "</p>" : "") +
         '<span class="nb__cta">' + esc(ui("nb.open")) + ICON.arrow + "</span></a>";
     }).join("");
   }
@@ -234,7 +238,7 @@
       return '<article class="conf reveal">' +
         '<div class="conf__date"><span class="conf__month">' + esc(ui("months")[parseInt(p[1], 10) - 1]) + '</span><span class="conf__year">' + p[0] + "</span></div>" +
         "<div>" +
-        '<h3 class="conf__title">' + esc(tr(c.title)) + "</h3>" +
+        '<h3 class="conf__title">' + rich(tr(c.title)) + "</h3>" +
         '<p class="conf__event">' + esc(tr(c.event)) + "</p>" +
         '<p class="conf__place">' + esc(tr(c.place)) + "</p>" +
         (c.authors ? '<p class="conf__authors">' + hlMe(c.authors) + "</p>" : "") +
@@ -247,7 +251,7 @@
   function renderProjects() {
     $("#projList").innerHTML = S.projects.map(function (p) {
       return '<article class="project reveal"><div>' +
-        '<h3 class="project__title">' + esc(tr(p.title)) + "</h3>" +
+        '<h3 class="project__title">' + rich(tr(p.title)) + "</h3>" +
         '<p class="project__meta"><span>' + esc(tr(p.funder)) + "</span><span>" + esc(p.code) + "</span><span>" + esc(tr(p.institution)) + "</span></p>" +
         '</div><div class="project__side"><div class="project__period">' + esc(p.period) + "</div>" +
         '<div class="project__role">' + esc(tr(p.role)) + "</div>" +
@@ -256,14 +260,14 @@
     }).join("");
     var simple = function (arr) {
       return (arr || []).map(function (x) {
-        return "<li><strong>" + esc(tr(x.title)) + "</strong><span>" + esc(tr(x.where)) + (x.period ? " · " + esc(x.period) : "") + "</span></li>";
+        return "<li><strong>" + rich(tr(x.title)) + "</strong><span>" + esc(tr(x.where)) + (x.period ? " · " + esc(x.period) : "") + "</span></li>";
       }).join("");
     };
     $("#teachList").innerHTML = simple(S.teaching);
     $("#outList").innerHTML = simple(S.outreach);
     $("#servList").innerHTML = simple(S.service);
     $("#tfgList").innerHTML = (S.theses || []).map(function (t) {
-      return "<li><strong>" + esc(tr(t.title)) + "</strong><span>" +
+      return "<li><strong>" + rich(tr(t.title)) + "</strong><span>" +
         [esc(t.student), esc(tr(t.degree)), esc(t.year), esc(tr(t.grade))].filter(Boolean).join(" · ") + "</span></li>";
     }).join("");
   }
@@ -294,7 +298,7 @@
       html += '<li class="tl__item' + (i === 0 ? " is-latest" : "") + '" style="--c:' + (CAT_COLOR[t.cat] || "var(--accent)") + '">' +
         '<span class="tl__date">' + esc(fmtMonth(t.date)) + "</span>" +
         '<span class="tl__dot" aria-hidden="true"></span>' +
-        '<p class="tl__body"><span class="tl__cat">' + esc(ui("cat." + t.cat)) + "</span>" + esc(tr(t.text)) + "</p></li>";
+        '<p class="tl__body"><span class="tl__cat">' + esc(ui("cat." + t.cat)) + "</span>" + rich(tr(t.text)) + "</p></li>";
     });
     $("#tlList").innerHTML = html;
     var more = $("#tlMore");
