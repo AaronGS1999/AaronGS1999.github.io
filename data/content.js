@@ -331,10 +331,36 @@ window.SITE = {
     }
   ],
 
+  /* ───────────────────────── TFG codirigidos ───────────────────────── */
+  theses: [
+    {
+      title: "Secuenciación, ensamblaje y anotación de los genomas mitocondriales de Moringa oleifera y M. stenopetala",
+      student: "Pablo Contreras Saavedra",
+      degree: { es: "Grado en Biotecnología · Universidad de Almería", en: "BSc Biotechnology · University of Almería" },
+      year: "2026",
+      grade: { es: "Matrícula de Honor", en: "Highest distinction" }
+    },
+    {
+      title: "Ensamblaje de novo, anotación y análisis comparativo de los plastomas de Moringa stenopetala y M. oleifera",
+      student: "Carmen Martínez Padilla",
+      degree: { es: "Grado en Biotecnología · Universidad de Almería", en: "BSc Biotechnology · University of Almería" },
+      year: "2026",
+      grade: { es: "Sobresaliente", en: "Outstanding" }
+    },
+    {
+      title: "Estudio comparativo de la fracción de ADN nuclear de origen organelar entre las especies Moringa stenopetala y M. oleifera",
+      student: "Andrea Ríos Bravo",
+      degree: { es: "Grado en Biotecnología · Universidad de Almería", en: "BSc Biotechnology · University of Almería" },
+      year: "2026",
+      grade: { es: "Sobresaliente", en: "Outstanding" }
+    }
+  ],
+
   /* ───────────────────────── Trayectoria (línea del tiempo) ─────────────────────────
      date: "AAAA-MM"   ·   cat: "research" | "education" | "publication" | "conference" | "course" | "other" */
   timeline: [
     { date: "2026-07", cat: "conference",  text: "Uncovering plastid-mitochondria DNA exchange and genome rearrangements in two economically important Moringa species (Moringaceae) · XVIII Meeting of Plant Molecular Biology (Bilbao)" },
+    { date: "2026-06", cat: "other",         text: { es: "Codirección de tres Trabajos Fin de Grado · Grado en Biotecnología (Universidad de Almería)", en: "Co-supervision of three Bachelor's theses · BSc Biotechnology (University of Almería)" } },
     { date: "2026-02", cat: "other",       text: { es: "Genómica y Proteómica · Grado en Biotecnología (Universidad de Almería)", en: "Genómica y Proteómica · BSc Biotechnology (University of Almería)" } },
     { date: "2026-02", cat: "publication", text: "Analysis of Biological Images and Quantitative Monitoring Using Deep Learning and Computer Vision · Journal of Imaging" },
     { date: "2026-02", cat: "publication", text: "Nuclear DNA of plastid origin (NUPTs), neglected driver of genome variation and evolutionary innovation · The Plant Journal" },

@@ -385,6 +385,7 @@ html[lang="en"] .pill-toggle [data-lang="en"] { background: var(--surface); colo
 
 .split { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 80px; }
 @media (max-width: 860px) { .split { grid-template-columns: 1fr; gap: 36px; margin-top: 60px; } }
+.theses { margin-top: 64px; max-width: 820px; }
 .plain li { padding: 14px 0; border-top: 1px solid var(--line); }
 .plain strong { display: block; font-size: 16px; font-weight: 600; letter-spacing: -.01em; }
 .plain span { display: block; font-size: 14px; color: var(--text-2); margin-top: 2px; }

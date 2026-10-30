@@ -22,7 +22,7 @@
       "pubs.empty": "No hay resultados para esa búsqueda.",
       "one.article": "Artículo", "one.review": "Revisión", "one.teaching": "Docencia",  "soft.title": "Aplicaciones y software", 
       "nb.title": "Cuadernos de Google Colab",  "nb.open": "Abrir en Colab",  "conf.title": "Congresos",  "proj.title": "Proyectos", "proj.current": "En curso",
-      "teach.title": "Docencia", "out.title": "Divulgación", "serv.title": "Revisión",  "tl.title": "Trayectoria", "tl.all": "Todo",
+      "teach.title": "Docencia", "out.title": "Divulgación", "serv.title": "Revisión", "tfg.title": "Trabajos Fin de Grado codirigidos",  "tl.title": "Trayectoria", "tl.all": "Todo",
       "tl.more": "Ver todo", "tl.less": "Ver menos",
       "cat.research": "Investigación", "cat.education": "Formación", "cat.publication": "Publicación",
       "cat.conference": "Congreso", "cat.course": "Curso", "cat.other": "Otros",  "contact.title": "Contacto", 
@@ -42,7 +42,7 @@
       "pubs.empty": "No results for that search.",
       "one.article": "Article", "one.review": "Review", "one.teaching": "Teaching",  "soft.title": "Apps and software", 
       "nb.title": "Google Colab notebooks",  "nb.open": "Open in Colab",  "conf.title": "Conferences",  "proj.title": "Projects", "proj.current": "Ongoing",
-      "teach.title": "Teaching", "out.title": "Outreach", "serv.title": "Peer review",  "tl.title": "Timeline", "tl.all": "All",
+      "teach.title": "Teaching", "out.title": "Outreach", "serv.title": "Peer review", "tfg.title": "Co-supervised Bachelor's theses",  "tl.title": "Timeline", "tl.all": "All",
       "tl.more": "Show all", "tl.less": "Show less",
       "cat.research": "Research", "cat.education": "Education", "cat.publication": "Publication",
       "cat.conference": "Conference", "cat.course": "Course", "cat.other": "Other",  "contact.title": "Contact", 
@@ -262,6 +262,10 @@
     $("#teachList").innerHTML = simple(S.teaching);
     $("#outList").innerHTML = simple(S.outreach);
     $("#servList").innerHTML = simple(S.service);
+    $("#tfgList").innerHTML = (S.theses || []).map(function (t) {
+      return "<li><strong>" + esc(tr(t.title)) + "</strong><span>" +
+        [esc(t.student), esc(tr(t.degree)), esc(t.year), esc(tr(t.grade))].filter(Boolean).join(" · ") + "</span></li>";
+    }).join("");
   }
 
   /* ─────────── Trayectoria ─────────── */
