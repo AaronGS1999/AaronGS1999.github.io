@@ -24,7 +24,7 @@
       "nb.title": "Cuadernos de Google Colab",  "nb.open": "Abrir en Colab",  "conf.title": "Congresos",  "proj.title": "Proyectos", "proj.current": "En curso",
       "teach.title": "Docencia", "out.title": "Divulgación", "serv.title": "Revisión", "tfg.title": "Trabajos Fin de Grado codirigidos",  "tl.title": "Trayectoria", "tl.all": "Todo",
       "tl.more": "Ver todo", "tl.less": "Ver menos",
-      "cat.research": "Investigación", "cat.education": "Formación", "cat.publication": "Publicación",
+      "cat.research": "Investigación", "cat.education": "Formación", "cat.teaching": "Docencia", "cat.publication": "Publicación",
       "cat.conference": "Congreso", "cat.course": "Curso", "cat.other": "Otros",  "contact.title": "Contacto", 
       "btn.email": "Correo", "btn.cv": "Descargar CV", "btn.pubs": "Publicaciones",
       "l.doi": "DOI", "l.read": "Leer", "l.code": "Código", "l.demo": "Abrir app", "l.repo": "GitHub", "l.paper": "Artículo", "l.repo2": "Repositorio UGR",
@@ -44,7 +44,7 @@
       "nb.title": "Google Colab notebooks",  "nb.open": "Open in Colab",  "conf.title": "Conferences",  "proj.title": "Projects", "proj.current": "Ongoing",
       "teach.title": "Teaching", "out.title": "Outreach", "serv.title": "Peer review", "tfg.title": "Co-supervised Bachelor's theses",  "tl.title": "Timeline", "tl.all": "All",
       "tl.more": "Show all", "tl.less": "Show less",
-      "cat.research": "Research", "cat.education": "Education", "cat.publication": "Publication",
+      "cat.research": "Research", "cat.education": "Education", "cat.teaching": "Teaching", "cat.publication": "Publication",
       "cat.conference": "Conference", "cat.course": "Course", "cat.other": "Other",  "contact.title": "Contact", 
       "btn.email": "Email", "btn.cv": "Download CV", "btn.pubs": "Publications",
       "l.doi": "DOI", "l.read": "Read", "l.code": "Code", "l.demo": "Open app", "l.repo": "GitHub", "l.paper": "Paper", "l.repo2": "UGR repository",
@@ -274,7 +274,7 @@
 
   /* ─────────── Trayectoria ─────────── */
   var CAT_COLOR = {
-    research: "var(--c-research)", education: "var(--c-education)", publication: "var(--c-publication)",
+    research: "var(--c-research)", education: "var(--c-education)", teaching: "var(--c-teaching)", publication: "var(--c-publication)",
     conference: "var(--c-conference)", course: "var(--c-course)", other: "var(--c-other)"
   };
   var tlState = { cat: "all", expanded: false, limit: 10 };
