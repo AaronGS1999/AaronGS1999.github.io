@@ -376,13 +376,11 @@ html[lang="en"] .pill-toggle [data-lang="en"] { background: var(--surface); colo
 }
 .conf__poster:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 0 0 1px var(--line), 0 10px 26px rgba(0,0,0,.18); }
 .conf__poster img { width: 100%; height: auto; }
-.conf__poster-label { display: block; margin-top: 6px; font-size: 12px; color: var(--accent); text-align: center; }
 @media (max-width: 560px) {
   .conf--poster { grid-template-columns: 52px 1fr; gap: 16px; padding: 22px; }
   .conf--poster > div:last-child { grid-column: 2; display: flex; align-items: center; gap: 14px; }
   .conf--poster .conf__poster { width: 72px; flex: none; }
-  .conf--poster .conf__poster-label { margin-top: 0; font-size: 14px; }
-}
+  .conf--poster }
 
 /* Visor de pósteres */
 .viewer {
