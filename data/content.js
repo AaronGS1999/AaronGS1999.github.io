@@ -128,13 +128,24 @@ window.SITE = {
     }
   ],
 
-  /* ───────────────────────── Congresos ───────────────────────── */
+  /* ───────────────────────── Congresos ─────────────────────────
+     poster: ruta a la imagen del póster en assets/posters/ (p. ej. "assets/posters/x.jpg").
+     Pon al lado una miniatura con el mismo nombre terminado en -thumb.jpg ("x-thumb.jpg"). */
   conferences: [
+    {
+      date: "2026-11",
+      title: "T2T gapless genome assembly of the neglected crop *Moringa stenopetala*",
+      authors: "Gálvez-Salido A, Martínez Padilla C, Contreras Saavedra P, Ríos Bravo A, Carretero-Paulet L",
+      event: "XV Simposio de Investigación en Ciencias Experimentales",
+      poster: "assets/posters/simposio-2026.jpg",
+      place: { es: "Almería, España", en: "Almería, Spain" }
+    },
     {
       date: "2026-07-01",
       title: "Uncovering plastid-mitochondria DNA exchange and genome rearrangements in two economically important *Moringa* species (Moringaceae)",
       authors: "Gálvez-Salido A, Contreras-Saavedra P, Martínez-Padilla C, Ríos-Bravo A, Kassa MT, Olson ME, Odee DW, Carretero-Paulet L",
       event: { es: "XVIII Meeting of Plant Molecular Biology · Póster S6.P16", en: "XVIII Meeting of Plant Molecular Biology · Poster S6.P16" },
+      poster: "assets/posters/rbmp-2026.jpg",
       place: { es: "Bilbao, España", en: "Bilbao, Spain" }
     },
     {
@@ -142,6 +153,7 @@ window.SITE = {
       title: "Characterisation of *Moringa stenopetala* organellar genomes",
       authors: "Gálvez-Salido A, Contreras Saavedra P, Martínez Padilla C, Ríos Bravo A, Regalado González JJ, Carretero-Paulet L",
       event: "XIV Simposio de Investigación en Ciencias Experimentales",
+      poster: "assets/posters/simposio-2025.jpg",
       place: "Almería, España"
     },
     {
@@ -156,6 +168,7 @@ window.SITE = {
       title: "Caracterización de las regiones centroméricas del lenguado senegalés (*Solea senegalensis*, Kaup 1858)",
       authors: "Gálvez-Salido A, Jiménez C, Manzanares García I, Zapata M, de la Herrán R, Robles F, Ruiz Rejón C, Navajas-Pérez R",
       event: "Congreso Estatal de Estudiantes de Biociencias (CEEBI)",
+      poster: "assets/posters/ceebi-2023.jpg",
       place: "Granada, España"
     },
     {
@@ -357,8 +370,9 @@ window.SITE = {
   ],
 
   /* ───────────────────────── Trayectoria (línea del tiempo) ─────────────────────────
-     date: "AAAA-MM"   ·   cat: "research" | "education" | "publication" | "conference" | "course" | "other" */
+     date: "AAAA-MM"   ·   cat: "research" | "education" | "teaching" | "publication" | "conference" | "outreach" | "review" | "course" | "other" */
   timeline: [
+    { date: "2026-11", cat: "conference",  text: "T2T gapless genome assembly of the neglected crop *Moringa stenopetala* · XV Simposio de Investigación en Ciencias Experimentales (Almería)" },
     { date: "2026-07", cat: "conference",  text: "Uncovering plastid-mitochondria DNA exchange and genome rearrangements in two economically important *Moringa* species (Moringaceae) · XVIII Meeting of Plant Molecular Biology (Bilbao)" },
     { date: "2026-06", cat: "teaching",      text: { es: "TFG codirigido: Secuenciación, ensamblaje y anotación de los genomas mitocondriales de *Moringa oleifera* y *M. stenopetala* · Pablo Contreras Saavedra · Grado en Biotecnología (Universidad de Almería)", en: "Co-supervised BSc thesis: Secuenciación, ensamblaje y anotación de los genomas mitocondriales de *Moringa oleifera* y *M. stenopetala* · Pablo Contreras Saavedra · BSc Biotechnology (University of Almería)" } },
     { date: "2026-06", cat: "teaching",      text: { es: "TFG codirigido: Ensamblaje *de novo*, anotación y análisis comparativo de los plastomas de *Moringa stenopetala* y *M. oleifera* · Carmen Martínez Padilla · Grado en Biotecnología (Universidad de Almería)", en: "Co-supervised BSc thesis: Ensamblaje *de novo*, anotación y análisis comparativo de los plastomas de *Moringa stenopetala* y *M. oleifera* · Carmen Martínez Padilla · BSc Biotechnology (University of Almería)" } },
@@ -367,7 +381,7 @@ window.SITE = {
     { date: "2026-02", cat: "publication", text: "Analysis of Biological Images and Quantitative Monitoring Using Deep Learning and Computer Vision · Journal of Imaging" },
     { date: "2026-02", cat: "publication", text: "Nuclear DNA of plastid origin (NUPTs), neglected driver of genome variation and evolutionary innovation · The Plant Journal" },
     { date: "2025-11", cat: "conference",  text: "Characterisation of *Moringa stenopetala* organellar genomes · XIV Simposio de Investigación en Ciencias Experimentales (Almería)" },
-    { date: "2025-09", cat: "other",       text: { es: "Revisor para BMC Genomics", en: "Reviewer for BMC Genomics" } },
+    { date: "2025-09", cat: "review",       text: { es: "Revisor para BMC Genomics", en: "Reviewer for BMC Genomics" } },
     { date: "2025-06", cat: "conference",  text: "An experimental comparison of Bayesian Network classifiers for duplicability detection · 13th Workshop on Uncertainty Processing, WUPES '25 (Třešť)" },
     { date: "2025-04", cat: "research",    text: { es: "Contrato predoctoral · Universidad de Almería, grupo BIO-359 PlantEVOLGEN", en: "PhD contract · University of Almería, BIO-359 PlantEVOLGEN group" } },
     { date: "2025-02", cat: "education",   text: { es: "Máster Universitario en Bioinformática y Bioestadística · Universitat Oberta de Catalunya", en: "MSc in Bioinformatics and Biostatistics · Universitat Oberta de Catalunya" } },
@@ -381,13 +395,13 @@ window.SITE = {
     { date: "2023-07", cat: "conference",  text: "Caracterización de las regiones centroméricas del lenguado senegalés (*Solea senegalensis*, Kaup 1858) · Congreso Estatal de Estudiantes de Biociencias (Granada)" },
     { date: "2023-07", cat: "education",   text: { es: "Máster Universitario en Genética y Evolución · Universidad de Granada", en: "MSc in Genetics and Evolution · University of Granada" } },
     { date: "2023-05", cat: "conference",  text: "Divergence and genomic evolution of repetitive elements in the sole *Solea senegalensis* · XLIII Congreso de la Sociedad Española de Genética (Valencia)" },
-    { date: "2022-11", cat: "other",       text: { es: "Bicentenario del Nacimiento de Gregor Mendel (1822-2022) · Semana de la Ciencia, Universidad de Granada", en: "Bicentenario del Nacimiento de Gregor Mendel (1822-2022) · Science Week, University of Granada" } },
+    { date: "2022-11", cat: "outreach",       text: { es: "Bicentenario del Nacimiento de Gregor Mendel (1822-2022) · Semana de la Ciencia, Universidad de Granada", en: "Bicentenario del Nacimiento de Gregor Mendel (1822-2022) · Science Week, University of Granada" } },
     { date: "2022-09", cat: "publication", text: "Using Excel Mapper to Design Chromosome Idiograms · The American Biology Teacher" },
     { date: "2022-09", cat: "education",   text: { es: "Inicio del Máster Universitario en Genética y Evolución · Universidad de Granada", en: "Started MSc in Genetics and Evolution · University of Granada" } },
     { date: "2022-08", cat: "course",      text: "PADI Open Water Diver" },
     { date: "2022-07", cat: "publication", text: "Una Calculadora de Genes para enseñar mendelismo, interacciones génicas y ligamiento · Didáctica de las Ciencias Experimentales y Sociales" },
     { date: "2022-04", cat: "course",      text: "MOOC Machine Learning y Big Data para la Bioinformática · Abierta UGR" },
-    { date: "2021-11", cat: "other",       text: { es: "Aptis General · Nivel C (MCER) · British Council", en: "Aptis General · CEFR level C · British Council" } },
+    { date: "2021-11", cat: "education",       text: { es: "Aptis General · Nivel C (MCER) · British Council", en: "Aptis General · CEFR level C · British Council" } },
     { date: "2021-10", cat: "course",      text: "Especialista en Bioinformática y Biología computacional · Euroinnova" },
     { date: "2021-09", cat: "research",    text: { es: "Colaborador del Departamento de Genética · Universidad de Granada", en: "Collaborator, Department of Genetics · University of Granada" } },
     { date: "2021-07", cat: "education",   text: { es: "Grado en Biología · Universidad de Granada", en: "BSc in Biology · University of Granada" } },

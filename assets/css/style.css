@@ -28,7 +28,9 @@
   --c-conference: #ff9f0a;
   --c-course: #30b0c7;
   --c-teaching: #a2845e;
-  --c-other: #ff375f;
+  --c-outreach: #ff375f;
+  --c-review: #5e5ce6;
+  --c-other: #8e8e93;
 
   --radius: 22px;
   --radius-s: 14px;
@@ -359,13 +361,48 @@ html[lang="en"] .pill-toggle [data-lang="en"] { background: var(--surface); colo
 @media (max-width: 760px) { .confs { grid-template-columns: 1fr; } }
 .conf { display: grid; grid-template-columns: 64px 1fr; gap: 20px; padding: 26px; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); }
 .conf__date { text-align: center; padding-top: 2px; }
-.conf__month { display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--c-other); letter-spacing: .04em; }
+.conf__month { display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--c-conference); letter-spacing: .04em; }
 .conf__year { display: block; font-size: 24px; font-weight: 700; letter-spacing: -.03em; line-height: 1.1; }
 .conf__title { font-size: 17px; font-weight: 600; line-height: 1.35; letter-spacing: -.015em; }
 .conf__event { margin-top: 8px; font-size: 14px; color: var(--text); }
 .conf__place { font-size: 14px; color: var(--text-2); }
 .conf__authors { margin-top: 8px; font-size: 13px; color: var(--text-3); }
 .conf__authors b { color: var(--text-2); }
+.conf--poster { grid-template-columns: 64px 1fr 92px; }
+.conf__poster {
+  align-self: start; padding: 0; border: 0; background: none; cursor: zoom-in;
+  border-radius: 8px; overflow: hidden; box-shadow: 0 0 0 1px var(--line), 0 4px 14px rgba(0,0,0,.10);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.conf__poster:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 0 0 1px var(--line), 0 10px 26px rgba(0,0,0,.18); }
+.conf__poster img { width: 100%; height: auto; }
+.conf__poster-label { display: block; margin-top: 6px; font-size: 12px; color: var(--accent); text-align: center; }
+@media (max-width: 560px) {
+  .conf--poster { grid-template-columns: 52px 1fr; gap: 16px; padding: 22px; }
+  .conf--poster > div:last-child { grid-column: 2; display: flex; align-items: center; gap: 14px; }
+  .conf--poster .conf__poster { width: 72px; flex: none; }
+  .conf--poster .conf__poster-label { margin-top: 0; font-size: 14px; }
+}
+
+/* Visor de pósteres */
+.viewer {
+  width: 100vw; height: 100vh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0;
+  background: transparent; color: #f5f5f7; overflow: hidden;
+}
+.viewer::backdrop { background: rgba(0,0,0,.86); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+.viewer[open] { display: flex; flex-direction: column; animation: viewerIn .25s var(--ease); }
+@keyframes viewerIn { from { opacity: 0; } to { opacity: 1; } }
+.viewer__bar { display: flex; align-items: center; gap: 12px; padding: 14px 18px; }
+.viewer__title { flex: 1; min-width: 0; font-size: 15px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.viewer__open { color: #8ec5ff; font-size: 14px; white-space: nowrap; }
+.viewer__close {
+  display: grid; place-items: center; width: 36px; height: 36px; border: 0; border-radius: 50%;
+  background: rgba(255,255,255,.14); color: #fff; cursor: pointer; font-size: 20px; line-height: 1;
+}
+.viewer__close:hover { background: rgba(255,255,255,.24); }
+.viewer__stage { flex: 1; min-height: 0; overflow: auto; display: flex; justify-content: center; align-items: flex-start; padding: 0 16px 24px; }
+.viewer__img { max-width: 100%; max-height: 100%; height: auto; object-fit: contain; border-radius: 6px; cursor: zoom-in; background: #fff; }
+.viewer.is-zoomed .viewer__img { max-width: none; max-height: none; width: min(2200px, 220vw); cursor: zoom-out; }
 
 /* ─────────── Proyectos ─────────── */
 .projects { display: grid; gap: 16px; }

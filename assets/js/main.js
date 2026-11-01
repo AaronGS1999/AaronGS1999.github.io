@@ -24,7 +24,7 @@
       "nb.title": "Cuadernos de Google Colab",  "nb.open": "Abrir en Colab",  "conf.title": "Congresos",  "proj.title": "Proyectos", "proj.current": "En curso",
       "teach.title": "Docencia", "out.title": "Divulgación", "serv.title": "Revisión", "tfg.title": "Trabajos Fin de Grado codirigidos",  "tl.title": "Trayectoria", "tl.all": "Todo",
       "tl.more": "Ver todo", "tl.less": "Ver menos",
-      "cat.research": "Investigación", "cat.education": "Formación", "cat.teaching": "Docencia", "cat.publication": "Publicación",
+      "cat.research": "Investigación", "cat.education": "Formación", "cat.teaching": "Docencia", "cat.outreach": "Divulgación", "cat.review": "Revisiones", "poster.label": "Ver póster", "poster.view": "Ver póster ampliado", "poster.full": "Abrir a tamaño completo", "poster.close": "Cerrar", "cat.publication": "Publicación",
       "cat.conference": "Congreso", "cat.course": "Curso", "cat.other": "Otros",  "contact.title": "Contacto", 
       "btn.email": "Correo", "btn.cv": "Descargar CV", "btn.pubs": "Publicaciones",
       "l.doi": "DOI", "l.read": "Leer", "l.code": "Código", "l.demo": "Abrir app", "l.repo": "GitHub", "l.paper": "Artículo", "l.repo2": "Repositorio UGR",
@@ -44,7 +44,7 @@
       "nb.title": "Google Colab notebooks",  "nb.open": "Open in Colab",  "conf.title": "Conferences",  "proj.title": "Projects", "proj.current": "Ongoing",
       "teach.title": "Teaching", "out.title": "Outreach", "serv.title": "Peer review", "tfg.title": "Co-supervised Bachelor's theses",  "tl.title": "Timeline", "tl.all": "All",
       "tl.more": "Show all", "tl.less": "Show less",
-      "cat.research": "Research", "cat.education": "Education", "cat.teaching": "Teaching", "cat.publication": "Publication",
+      "cat.research": "Research", "cat.education": "Education", "cat.teaching": "Teaching", "cat.outreach": "Outreach", "cat.review": "Peer review", "poster.label": "View poster", "poster.view": "View larger poster", "poster.full": "Open full size", "poster.close": "Close", "cat.publication": "Publication",
       "cat.conference": "Conference", "cat.course": "Course", "cat.other": "Other",  "contact.title": "Contact", 
       "btn.email": "Email", "btn.cv": "Download CV", "btn.pubs": "Publications",
       "l.doi": "DOI", "l.read": "Read", "l.code": "Code", "l.demo": "Open app", "l.repo": "GitHub", "l.paper": "Paper", "l.repo2": "UGR repository",
@@ -235,7 +235,8 @@
     var list = S.conferences.slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; });
     $("#confList").innerHTML = list.map(function (c) {
       var p = c.date.split("-");
-      return '<article class="conf reveal">' +
+      var thumb = c.poster ? c.poster.replace(/\.(jpe?g|png|webp)$/i, "-thumb.$1") : "";
+      return '<article class="conf reveal' + (c.poster ? " conf--poster" : "") + '">' +
         '<div class="conf__date"><span class="conf__month">' + esc(ui("months")[parseInt(p[1], 10) - 1]) + '</span><span class="conf__year">' + p[0] + "</span></div>" +
         "<div>" +
         '<h3 class="conf__title">' + rich(tr(c.title)) + "</h3>" +
@@ -243,8 +244,37 @@
         '<p class="conf__place">' + esc(tr(c.place)) + "</p>" +
         (c.authors ? '<p class="conf__authors">' + hlMe(c.authors) + "</p>" : "") +
         (c.doi || c.url ? '<p class="pub__meta">' + (c.doi ? ext("https://doi.org/" + c.doi, ui("l.doi")) : "") + (c.url ? ext(c.url, ui("l.read")) : "") + "</p>" : "") +
-        "</div></article>";
+        "</div>" +
+        (c.poster ? '<div><button class="conf__poster" type="button" data-poster="' + esc(c.poster) + '" data-title="' + esc(tr(c.title).replace(/\*/g, "")) + '" aria-label="' + esc(ui("poster.view")) + '">' +
+          '<img src="' + esc(thumb) + '" alt="" loading="lazy"></button><span class="conf__poster-label">' + esc(ui("poster.label")) + "</span></div>" : "") +
+        "</article>";
     }).join("");
+  }
+
+  /* ─────────── Visor de pósteres ─────────── */
+  function initViewer() {
+    var dlg = $("#viewer"), img = $("#viewerImg");
+    if (!dlg || typeof dlg.showModal !== "function") {
+      // Navegadores sin <dialog>: abre la imagen en otra pestaña
+      document.addEventListener("click", function (e) {
+        var b = e.target.closest(".conf__poster"); if (b) window.open(b.getAttribute("data-poster"), "_blank");
+      });
+      return;
+    }
+    document.addEventListener("click", function (e) {
+      var b = e.target.closest(".conf__poster"); if (!b) return;
+      var src = b.getAttribute("data-poster");
+      dlg.classList.remove("is-zoomed");
+      img.src = src; img.alt = b.getAttribute("data-title");
+      $("#viewerTitle").textContent = b.getAttribute("data-title");
+      $("#viewerOpen").href = src; $("#viewerOpen").textContent = ui("poster.full");
+      $("#viewerClose").setAttribute("aria-label", ui("poster.close"));
+      dlg.showModal();
+    });
+    img.addEventListener("click", function () { dlg.classList.toggle("is-zoomed"); });
+    $("#viewerClose").addEventListener("click", function () { dlg.close(); });
+    dlg.addEventListener("click", function (e) { if (e.target === dlg || e.target.id === "viewerStage") dlg.close(); });
+    dlg.addEventListener("close", function () { img.removeAttribute("src"); });
   }
 
   /* ─────────── Proyectos, docencia, divulgación ─────────── */
@@ -275,7 +305,7 @@
   /* ─────────── Trayectoria ─────────── */
   var CAT_COLOR = {
     research: "var(--c-research)", education: "var(--c-education)", teaching: "var(--c-teaching)", publication: "var(--c-publication)",
-    conference: "var(--c-conference)", course: "var(--c-course)", other: "var(--c-other)"
+    conference: "var(--c-conference)", outreach: "var(--c-outreach)", review: "var(--c-review)", course: "var(--c-course)", other: "var(--c-other)"
   };
   var tlState = { cat: "all", expanded: false, limit: 10 };
   function renderTLFilter() {
@@ -410,6 +440,7 @@
   renderAll();
   initNav();
   initEvents();
+  initViewer();
   requestAnimationFrame(function () {
     document.querySelectorAll(".hero .reveal").forEach(function (el, i) {
       setTimeout(function () { el.classList.add("is-in"); }, 60 * i);
