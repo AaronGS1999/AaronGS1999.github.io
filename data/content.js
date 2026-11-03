@@ -44,10 +44,10 @@ window.SITE = {
     links: [
       { type: "orcid",    label: "ORCID",    url: "https://orcid.org/0000-0002-1440-8862" },
       { type: "github",   label: "GitHub",   url: "https://github.com/AaronGS1999" },
+      { type: "researchgate", label: "ResearchGate", url: "https://www.researchgate.net/profile/Aaron-Galvez-Salido-2" },
       { type: "linkedin", label: "LinkedIn", url: "https://www.linkedin.com/in/aaron-g%C3%A1lvez-salido-517474168" }
       // Añade cuando quieras, por ejemplo:
       // { type: "scholar", label: "Google Scholar", url: "https://scholar.google.com/citations?user=XXXX" },
-      // { type: "researchgate", label: "ResearchGate", url: "https://www.researchgate.net/profile/XXXX" },
     ]
   },
 
